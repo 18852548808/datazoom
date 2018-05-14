@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/btc.css">
+    <script src="./js/echarts.min4.1.0.rc2.js"></script>
+    <title>Niffler</title>
+</head>
+<body>
+
+<!-- 头部交易记录 -->
+    <header>
+        <h1>BTC</h1>
+        <div class="trans_record">
+            <span class="equal_to">≈</span>
+            <span class="amount_one">0.0000</span>
+            <span class="cny">CNY</span>
+
+            <div class="hangqing">
+                <div class="hangjia line">
+                    <span>行情价</span>&#x3000;
+                    <span>55902</span>
+                </div>
+                <div class="hangge">
+                    <span>个数</span>&#x3000;
+                    <span>12</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--<div class="jiange"></div>-->
+
+    <div class="kuang">
+        <!--<div id="container" style="width: 100%;height:30rem;"></div>-->
+      <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+      <div id="main" style="width: 100%;height:16rem;"></div>
+    </div>
+
+    <!-- 相关资讯 -->
+    <div class="list_item">
+        <span class="all_item checked">相关资讯</span>
+    </div>
+    <div class="re_date">
+        04月26日 2018
+    </div>
+    <div class="brif_info">
+        <h3>BTC</h3>
+        <div class="pages">
+            比特币（BitCion）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的P2P网络。
+        </div>
+        <div class="pages">
+            比特币是一种P2P形式的数字黄金。在某些领域，它已经开始取代黄金的作用和地位。
+        </div>
+        <div class="extract" id="extract">
+            提取
+        </div>
+    </div>
+
+
+<!-- 底部菜单栏 -->
+    <footer>
+        <div class="wallet">
+            <span class="icon_wallet"></span>
+        </div>
+        <div class="gexian"></div>
+        <div class="money">
+            <span class="icon_money"></span>
+        </div>
+    </footer>
+
+  <div class="extr_pop" style="display: none">
+    <div class="tabule">
+      <h1>提取功能正在开发</h1>
+      <h2>敬请期待...</h2>
+      <div class="bgb"></div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="maskLayer"></div>
+  </div>
+
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/btc.js"></script>
+    <script src="js/echartsBtcCon.js"></script>
+</body>
+</html>
