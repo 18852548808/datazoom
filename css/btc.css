@@ -5,6 +5,7 @@ html,body {
 body {
     font-size: 16px;
     max-width: 100%;
+    overflow-x: hidden;
     background-color: #f8f8f9;
 }
 .mains {

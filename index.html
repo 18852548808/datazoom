@@ -86,4 +86,13 @@
     <script src="./js/btc.js"></script>
     <script src="js/echartsBtcCon.js"></script>
 </body>
+<script>
+    (function(win,doc){
+        function change(){
+            doc.documentElement.style.fontSize = 16 * document.documentElement.clientWidth / 320 + 'px';
+        };
+        win.addEventListener('resize',change,false);
+        change();
+    })(window,document);
+</script>
 </html>
