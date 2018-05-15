@@ -29,7 +29,7 @@ $(function() {
     /***** 关注二维码 *****/
     $('.codeBtn a').on('click', function(e) {
         $('.attention').fadeIn();
-        $('body').css('position','fixed');
+        $('html').css('position','fixed');
         if(e.target.className.indexOf(".maskLayer") >= 0) {
             e.preventDefault();
         }
@@ -42,7 +42,7 @@ $(function() {
     });
     $('.maskLayer').on('click',function (e) {
         $('.attention').hide();
-        $('body').css('position','relative');
+        $('html').css('position','relative');
         return false;
     })
 });

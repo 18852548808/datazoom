@@ -1,3 +1,6 @@
+html{
+    position: relative;
+}
 html,body {
     width: 100%;
     overflow: hidden;
@@ -6,7 +9,6 @@ html,body {
 body {
     font-size: 16px;
     background-color: #f8f8f9;
-
     -webkit-overflow-scrolling: touch;
 }
 .allBox {
