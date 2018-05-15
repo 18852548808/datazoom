@@ -15,7 +15,7 @@ $(function() {
     var proCon = $('.proCon');
     list_item.on('click', '.all_item',function() {
         console.log(1)
-        $("html,body").animate({scrollTop:0}, 500);
+        $("body").animate({scrollTop:0}, 500);
         onChecked($(this));
         proCon.empty();
         more.hide();
@@ -27,7 +27,7 @@ $(function() {
     });
     list_item.on('click', '.income', function() {
         console.log(2)
-        $("html,body").animate({scrollTop:0}, 500);
+        $("body").animate({scrollTop:0}, 500);
         onChecked($(this));
         proCon.empty();
         more.hide();
@@ -39,7 +39,7 @@ $(function() {
     });
     list_item.on('click', '.payfor', function() {
         console.log(3)
-        $("html,body").animate({scrollTop:0}, 500);
+        $("body").animate({scrollTop:0}, 500);
         onChecked($(this));
         proCon.empty();
         more.hide();
