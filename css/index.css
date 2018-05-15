@@ -1,0 +1,304 @@
+html,body {
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+body {
+    font-size: 16px;
+    background-color: #f8f8f9;
+
+    -webkit-overflow-scrolling: touch;
+}
+.allBox {
+    position: relative;
+    padding-bottom: 4.5rem;
+}
+
+
+/* 头部交易记录样式 */
+header {
+    width: 100%;
+    background-image: url('../img/bg_shouye@3x.png');
+    background-size: 100% 97%;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+header h1 {
+    position: relative;
+}
+header h1 em{
+    display: block;
+    color: #ffffff;
+    font-size: 1.4rem;
+    padding-left: 1.2rem;
+    line-height: 3.675rem;
+}
+header h1 .codeBtn{
+    display: block;
+    position: absolute;
+    right:-0.25rem;
+    top:50%;
+    margin-top: -1.09rem;
+}
+header h1 .codeBtn a{
+    display: block;
+    width: 4.656rem;
+    height: 2.187rem;
+    background:url(../img/codeBtn_nor.png) no-repeat center;
+    background-size: 100% 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+header h1 .codeBtn a:active{
+    background-image: url(../img/codeBtn_active.png);
+}
+.trans_record {
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0px 4px 20px 0px
+		rgba(39, 52, 125, 0.25);
+    border-radius: 0.8rem;
+    text-align: center;
+    color: #212c68;
+    padding: 2.8rem 0 1.8rem;
+    position: relative;
+    top: 0;
+}
+.trans_record .equal_to, .xiang .equal_to {
+    font-size: 1.2rem;
+}
+.trans_record .amount_one {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 2rem;
+    color: #ff6f22;
+}
+.trans_record .cny {
+    font-size: 1rem;
+}
+.record_btn {
+    width: 7rem;
+    height: 2rem;
+    margin: 1.8rem auto 0 auto;
+    line-height: 2rem;
+    text-align: center;
+    color: #212c68;
+    font-size: 1rem;
+    border: solid 2px rgba(251, 100, 33, 0.6);
+    opacity: 0.6;
+    border-radius: 1rem;
+}
+
+
+/* 中部大卡展示样式 */
+.quote_price {
+    width: 90%;
+    margin: 1.5rem auto 0 auto;
+    padding: 0 1.5rem 1rem 1.5rem;
+    box-sizing: border-box;
+}
+.quote_price .quote_record {
+    width: 100%;
+    background-image: url('../img/card_BTC@3x.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-bottom: 0rem;
+}
+.quote_record .shang {
+    height: 2rem;
+    line-height: 2rem;
+    padding: 1rem 0 0 1rem;
+}
+.quote_record .left_lable {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    /*background-image: url('../img/icon_BTC@3x.png');*/
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.quote_record .lable_name {
+    color: #fff;
+    font-size: 1.2rem;
+    position: relative;
+    top: -0.5rem;
+    left: 0.6rem;
+}
+.quote_record .xiang {
+    text-align: center;
+    padding: 0.7rem 0;
+    color: #fff;
+}
+.xiang .amount_one {
+    font-size: 2rem;
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+.xiang .cny {
+    font-size: 1.2rem;
+}
+.price_info {
+    color: rgba(27,27,27,0.7);
+    font-size: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 0.2rem;
+}
+.quote_record .price_info{
+    text-align: center;
+    padding-left: 0;
+}
+.quote_record .price_info span{
+    color:#ffd3c4;
+}
+.quote_num {
+    text-align: center;
+    padding-left: 0;
+    color: #ffd3c4;
+    padding-bottom: 1.6rem;
+}
+
+/* 下部卡包列表展示样式 */
+.list_card {
+    width: 95%;
+    margin: 1.6rem auto 0;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.list_card .eth {
+    width: 49%;
+    background-image: url('../img/card_ETH@3x.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+.eth .shang {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0.5rem 0 0 0.6rem;
+}
+.eth .lable_name {
+    color: #ff6f22;
+    font-size: 0.8rem;
+    position: relative;
+    top: -0.1rem;
+    left: 0.2rem;
+}
+.eth .eth_lable {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    /*background-image: url('../img/icon_ETH@3x.png');*/
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.eth .xiang .equal_to {
+    font-size: 0.8rem;
+}
+.eth .xiang {
+    text-align: center;
+    color: #ff6f22;
+}
+.eth .xiang .amount_one {
+    font-size: 1.3rem;
+}
+.eth .xiang .cny {
+    font-size: 0.8rem;
+}
+
+.eth .price_info {
+    text-align: center;
+    color: rgba(27,27,27,0.7);
+    font-size: 0.6rem;
+    padding: 0;
+    padding-top: 0.3rem;
+}
+.eth .quote_num {
+    text-align: center;
+    font-size: 0.6rem;
+    color: rgba(27,27,27,0.7);
+    padding: 0.2rem 0 0 0;
+}
+.swetc {
+    background-image: url('../img/ETH.png') !important;
+}
+.doge {
+    background-image: url('../img/ETH.png') !important;
+}
+/* 分割线 */
+.fengexian {
+    width: 90%;
+    margin: 1rem auto;
+    height: 1px;
+    border-top: 1px solid #c7c7c7;
+}
+
+/* 底部菜单栏 */
+footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 2rem;
+    background-color: #f6f6f6;
+    border-top: 1px solid #e1e3ec;
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 80;
+}
+.gexian {
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #e1e3ec;
+}
+footer div {
+    text-align: center;
+    width: 50%;
+}
+
+.icon_wallet {
+    display: block;
+    width: 2rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    background-image: url('../img/icon_qianbao2@3x.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    top: -0.2rem;
+}
+.icon_money {
+    display: block;
+    width: 2rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    background-image: url('../img/icon_zhaobi@3x.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    top: -0.2rem;
+}
+
+/*******加载数据*****/
+.loadData{
+    display: none;
+    color:#ccc;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.waitmore{
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 0.8rem;
+}
