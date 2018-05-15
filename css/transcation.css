@@ -1,0 +1,277 @@
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+html,body {
+    width: 100%;
+
+}
+body {
+    font-size: 16px;
+    background-color: #f8f8f9;
+
+}
+.transcationBox{
+    padding-bottom: 4rem;
+}
+
+.line {
+    position:relative;
+}
+.line:after, .line:before {
+    position:absolute;
+    top:0;
+    z-index:0;
+    content:"";
+    -webkit-transform:scale(0.5);
+    -webkit-transform-origin:0 0;
+    transform:scale(0.5);
+    transform-origin:0 0;
+    box-sizing:border-box; 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/* 头部交易记录样式 */
+header {
+    width: 100%;
+    background-image: url('../img/bg_shouye@3x.png');
+    background-size: 100% 97%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin-bottom: 1.5rem;
+}
+.headerTitle{
+    padding: 1rem 0 0 1.2rem;
+}
+.headerTitle h4{
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+.headerTitle p{
+    color: #ffffff;
+    line-height: 2rem;
+}
+.headerTitle p .equal_to, .headerTitle p .cny{
+    font-size: 0.875rem;
+}
+.headerTitle p .amount_one{
+    font-size: 1.2rem;
+}
+.trans_record {
+    width: 90%;
+    height:16rem;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 8px rgba(39, 52, 125, 0.20);
+    border-radius: 0.8rem;
+    text-align: center;
+    color: #212c68;
+    /*padding: 2.8rem 0 1.8rem;*/
+    position: relative;
+    top: 0;
+    overflow: hidden;
+}
+.trans_record .equal_to, .xiang .equal_to {
+    font-size: 1.2rem;
+}
+.trans_record .amount_one {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 2rem;
+    color: #ff6f22;
+}
+.trans_record .cny {
+    font-size: 1rem;
+}
+.noProperty{
+    color: #777;
+    text-align: center;
+    margin-top: 6rem;
+    line-height: 1.5rem;
+    display: none;
+}
+.record_btn {
+    width: 10rem;
+    height: 3rem;
+    margin: 2.5rem auto 0 auto;
+    line-height: 3rem;
+    text-align: center;
+    color: #212c68;
+    font-size: 1.3rem;
+    border: solid 2px rgba(251, 100, 33, 0.6);
+    opacity: 0.6;
+    border-radius: 2rem;
+}
+
+/* 收入支出表 */
+/*.list_item0{
+    border-bottom: 1px solid #e1e3ec;
+    height: 3.4rem;
+    display: none;
+}*/
+.list_item {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6rem 0 1.5rem;
+    border-bottom: 1px solid #e1e3ec;
+    height: 3.4rem;
+    background-color: #f8f8f9;
+    z-index: 9;
+   /*
+    top:0;*/
+    /*left: 0;*/
+}
+
+.list_item{
+    top:0;
+}
+.list_item span {
+    font-size: 1rem;
+    width: 6rem;
+    padding: 1rem 0;
+    text-align: center;
+    box-sizing: content-box;
+}
+.checked {
+    border-bottom: 2px solid #212c67;
+}
+.all_pro, .income_pro, .pay_pro {
+    /*padding-bottom: 5rem;*/
+}
+
+.time_record {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.8rem;
+    color: #999999;
+}
+.product {
+    padding: 0.5rem 0;
+    background-color: #fff;
+}
+.numb {
+    display: flex;
+    justify-content: space-between;
+    color: #414141;
+}
+.product_name, .product_price {
+    /*padding: 0.5rem 0;*/
+}
+.product_name {
+    padding-left: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+.icon {
+    width: 1.4rem;
+    height: 2.5rem;
+    background-image: url('../img/ETH.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 1rem;
+}
+.pro_cont{
+    line-height: 2.5rem;
+}
+.product_name::before {
+    left: 0;
+    width: 5px;
+    height: 200%;
+    background-color: #7ed321;
+    border-radius: 2px;
+}
+.product_price {
+    padding-right: 2rem;
+}
+.product_price h5{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.product_price p{
+    font-size: 0.875rem;
+    color: #414141;
+    line-height: 1.25rem;
+    text-align: right;
+}
+
+.kuan {
+    width: 100%;
+    height: 5px;
+}
+
+/* 底部菜单栏 */
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 2rem;
+    background-color: #f6f6f6;
+    border-top: 1px solid #e1e3ec;
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+.gexian {
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #e1e3ec;
+}
+footer div {
+    text-align: center;
+    width: 50%;
+}
+
+.icon_wallet {
+    display: block;
+    width: 2rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    background-image: url('../img/icon_qianbao2@3x.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    top: -0.2rem;
+}
+.icon_money {
+    display: block;
+    width: 2rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    background-image: url('../img/icon_zhaobi@3x.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    top: -0.2rem;
+}
+
+.loaderIcon{
+
+    text-align: center;
+}
+.more,.noData{
+
+    text-align: center;
+    line-height: 3rem;
+    color: #999999;
+    font-size: 0.8rem;
+}
+
+.getMore{
+    text-align: center;
+    display: none;
+    line-height: 3rem;
+}
+.getMore span{
+    color: #ff6f22;
+    font-size: 0.8rem;
+}
+.colorGray span{
+    color:#999;
+}
