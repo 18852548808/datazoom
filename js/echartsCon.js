@@ -407,11 +407,11 @@ $('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
         (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
     if (delta > 0) {
         // 向上滚
-        console.log("wheelup");
+        // console.log("wheelup");
 
     } else if (delta < 0) {
         // 向下滚
-        console.log("wheeldown");
+        // console.log("wheeldown");
         myChart.setOption( {
             dataZoom: [{
                 zoomLock:false
@@ -427,15 +427,22 @@ $('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
 var hammer = new Hammer($('#main canvas')[0]);
 hammer.on("pinch", function(ev) {
     console.log(ev.scale);
-    alert(ev)
+    myChart.setOption( {
+        dataZoom: [{
+            zoomLock:false
+        },
+            {
+                zoomLock:false
+            }],
+    });
 });
 
 myChart.on('datazoom', function (params){
     //获得起止位置百分比
     var startPercent = params.batch[0].start;
     var endPercent = params.batch[0].end;
-    console.log(endPercent-startPercent);
-    console.log(100-twoData);
+    // console.log(endPercent-startPercent);
+    // console.log(100-twoData);
 
     if(endPercent-startPercent < 100-twoData){
         console.log(1)
