@@ -430,10 +430,10 @@ hammer.on("pinch", function(ev) {
     if(ev.scale<0){
         myChart.setOption( {
             dataZoom: [{
-                zoomLock:false
+                zoomLock:true
             },
                 {
-                    zoomLock:false
+                    zoomLock:true
                 }],
         });
     }
