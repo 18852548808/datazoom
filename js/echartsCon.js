@@ -427,14 +427,17 @@ $('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
 var hammer = new Hammer($('#main canvas')[0]);
 hammer.on("pinch", function(ev) {
     console.log(ev.scale);
-    myChart.setOption( {
-        dataZoom: [{
-            zoomLock:false
-        },
-            {
+    if(ev.scale<0){
+        myChart.setOption( {
+            dataZoom: [{
                 zoomLock:false
-            }],
-    });
+            },
+                {
+                    zoomLock:false
+                }],
+        });
+    }
+
 });
 
 myChart.on('datazoom', function (params){
