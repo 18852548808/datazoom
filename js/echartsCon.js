@@ -93,7 +93,6 @@ option = {
     },
     {
         type: 'inside',
-        y: '90%',
         start: 40,
         end: 100,
         filterMode: 'empty',
@@ -233,22 +232,55 @@ function persent(p){
     return p2;
 }
 
+var twoData ;
 // 异步加载数据
 $.get('echarts.json').done(function (data) {
     // console.log('ok')
     // myChart.hideLoading();
-    if(data.resCode){
+    if(data.resCode) {
         var option = data.option;
-        if(option == null){
+        if (option == null) {
             $('#main').hide();
             $('.noProperty').show();
             return
-        }else{
+        } else {
             $('#main').show();
             $('.noProperty').hide();
         }
         // console.log(persent(Percentage(20, option.xData.length)))
+        twoData = 102 - Percentage(2, option.xData.length);
         // 填入数据
+
+        if (option.xData.length == 1){
+            option.xData.unshift('0');
+            option.seriesData.unshift('0');
+            console.log(option.xData)
+            myChart.setOption( {
+                dataZoom: [{
+                    start: 0,
+                    end: 100,
+
+                },
+                {
+                    start: 0,
+                    end: 100,
+
+                }],
+                xAxis: {
+                    data: option.xData
+                },
+                yAxis:{
+                    boundaryGap: false,
+                },
+                series: [{
+                    // 根据名字对应到相应的系列
+                    name: '币值',
+                    data: option.seriesData
+                }]
+            });
+        }
+
+
         if(persent(Percentage(10, option.xData.length))==100){
             myChart.setOption( {
                 dataZoom: [{
@@ -292,14 +324,15 @@ myChart.on('rendered', function () { // 渲染结束事件
 
 var startX,startY;
 
-myChart.on('touchstart',function(e){
+$('#main canvas').on('touchstart',function(e){
+    console.log(e)
     startX = e.originalEvent.changedTouches[0].pageX,
         startY = e.originalEvent.changedTouches[0].pageY;
 });
 
-myChart.on("touchmove", function(e) {
-
-    e.preventDefault();
+$('#main canvas').on("touchmove", function(e) {
+    console.log(1)
+    // e.preventDefault();
 
     moveEndX = e.originalEvent.changedTouches[0].pageX,
 
@@ -310,49 +343,120 @@ myChart.on("touchmove", function(e) {
         Y = moveEndY - startY;
 
     if ( X > 0 ) { // left 2 right
-
+        $('.trans_record .cell').css('zIndext','-1');
         myChart.setOption( {
             dataZoom: [{
-                disabled:false
+                disabled:false,
+                zoomLock:false
             },
-                {
-                    disabled:false
-                }],
+            {
+                disabled:false,
+                zoomLock:false
+            }],
         });
 
     } else if  ( X < 0 ) { // right 2 left
-
+        console.log('right')
+        $('.trans_record .cell').css('zIndext','-1');
         myChart.setOption( {
             dataZoom: [{
-                disabled:false
+                disabled:false,
+                zoomLock:false
             },
-                {
-                    disabled:false
-                }],
+            {
+                disabled:false,
+                zoomLock:false
+            }],
         });
 
-    } else if  ( Math.abs(Y) > Math.abs(X) && Y > 0) { // top 2 bottom
-
+    } else if  ( Math.abs(Y) > Math.abs(X)+5 && Y > 0) { // top 2 bottom
+        $('.trans_record .cell').css('zIndext','5');
         myChart.setOption( {
             dataZoom: [{
-                disabled:true
+                disabled:true,
+                zoomLock:true
             },
-                {
-                    disabled:true
-                }],
+            {
+                disabled:true,
+                zoomLock:true
+            }],
         });
-        $('body').on('scroll')
 
-    } else if  ( Math.abs(Y) > Math.abs(X) && Y < 0 ) { // bottom 2 top
+
+    } else if  ( Math.abs(Y) > Math.abs(X)+5 && Y < 0 ) { // bottom 2 top
+        $('.trans_record .cell').css('zIndext','5');
         myChart.setOption( {
             dataZoom: [{
-                disabled:true
+                disabled:true,
+                zoomLock:true
             },
-                {
-                    disabled:true
-                }],
+            {
+                disabled:true,
+                zoomLock:true
+            }],
         });
-        $('body').on('scroll')
+
     }
+
+});
+
+// 判断鼠标滚轴向上滚动还是向下滚动
+$('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
+    e.preventDefault();
+    var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
+        (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
+    if (delta > 0) {
+        // 向上滚
+        console.log("wheelup");
+
+    } else if (delta < 0) {
+        // 向下滚
+        console.log("wheeldown");
+        myChart.setOption( {
+            dataZoom: [{
+                zoomLock:false
+            },
+                {
+                    zoomLock:false
+                }],
+        });
+    }
+});
+
+// 先要对监听的DOM进行一些初始化
+var hammer = new Hammer($('#main canvas')[0]);
+hammer.on("pinch", function(ev) {
+    console.log(ev.scale);
+    alert(ev)
+});
+
+myChart.on('datazoom', function (params){
+    //获得起止位置百分比
+    var startPercent = params.batch[0].start;
+    var endPercent = params.batch[0].end;
+    console.log(endPercent-startPercent);
+    console.log(100-twoData);
+
+    if(endPercent-startPercent < 100-twoData){
+        console.log(1)
+        myChart.setOption( {
+            dataZoom: [{
+                zoomLock:true
+            },
+            {
+                zoomLock:true
+            }],
+        });
+    }else{
+        myChart.setOption( {
+            dataZoom: [{
+                zoomLock:false
+            },
+            {
+                zoomLock:false
+            }],
+        });
+    }
+
 
 });

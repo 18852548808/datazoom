@@ -5,6 +5,13 @@ $(function() {
             val.addClass('checked');
         }
     }
+    
+    function clickCommon(obj) {
+        $("body").stop().animate({scrollTop:0}, 500);
+        onChecked(obj);
+        proCon.empty();
+        more.hide();
+    }
 
     // 自定义属性myid是当前渲染数据的标识 0-全部 1-收入 2-支出
     var list_item = $('.list_item');
@@ -15,10 +22,9 @@ $(function() {
     var proCon = $('.proCon');
     list_item.on('click', '.all_item',function() {
         console.log(1)
-        $("body").stop().animate({scrollTop:0}, 500);
-        onChecked($(this));
-        proCon.empty();
-        more.hide();
+
+        clickCommon($(this));
+
         income_pro.hide();
         pay_pro.hide();
         all_pro.show();
@@ -27,10 +33,9 @@ $(function() {
     });
     list_item.on('click', '.income', function() {
         console.log(2)
-        $("body").stop().animate({scrollTop:0}, 500);
-        onChecked($(this));
-        proCon.empty();
-        more.hide();
+
+        clickCommon($(this));
+
         all_pro.hide();
         pay_pro.hide();
         income_pro.show();
@@ -39,10 +44,9 @@ $(function() {
     });
     list_item.on('click', '.payfor', function() {
         console.log(3)
-        $("body").stop().animate({scrollTop:0}, 500);
-        onChecked($(this));
-        proCon.empty();
-        more.hide();
+
+        clickCommon($(this));
+
         all_pro.hide();
         income_pro.hide();
         pay_pro.show();
@@ -205,7 +209,6 @@ $(function() {
         }
 
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-            console.log('ios')
             list_item.addClass("sticky");
         }
     }
