@@ -254,16 +254,20 @@ $.get('echarts.json').done(function (data) {
         if (option.xData.length == 1){
             option.xData.unshift('0');
             option.seriesData.unshift('0');
-            console.log(option.xData)
+
             myChart.setOption( {
                 dataZoom: [{
                     start: 0,
                     end: 100,
+                    disabled:true,
+                    zoomLock:true
 
                 },
                 {
                     start: 0,
                     end: 100,
+                    disabled:true,
+                    zoomLock:true
 
                 }],
                 xAxis: {
@@ -416,28 +420,42 @@ $('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
             dataZoom: [{
                 zoomLock:false
             },
-                {
-                    zoomLock:false
-                }],
+            {
+                zoomLock:false
+            }],
         });
     }
 });
 
-// 先要对监听的DOM进行一些初始化
-var hammer = new Hammer($('#main canvas')[0]);
-hammer.on("pinch", function(ev) {
-    console.log(ev.scale);
-    if(ev.scale<0){
-        myChart.setOption( {
-            dataZoom: [{
-                zoomLock:true
-            },
-                {
-                    zoomLock:true
-                }],
-        });
-    }
 
+/*******************************放大缩小****************************************/
+$(function() {     //放大缩小
+    var target = $('#main canvas')[0];
+    target.style.webkitTransition = 'all ease 0.05s';
+    touch.on('#target', 'touchstart', function(ev) {
+        ev.preventDefault();
+    });
+    var initialScale = 1;
+    var currentScale;
+    touch.on('#target', 'pinchend', function(ev) {
+        currentScale = ev.scale - 1;
+        currentScale = initialScale + currentScale;
+        currentScale = currentScale > 5 ? 5 : currentScale; //自己调节可以放大的最大倍数
+        currentScale = currentScale < 0.1 ? 0.1 : currentScale; //自己调节可以缩小的最小倍数
+        if(currentScale<1){
+            myChart.setOption( {
+                dataZoom: [{
+                    zoomLock:true
+                },
+                    {
+                        zoomLock:true
+                    }],
+            });
+        }
+    });
+    touch.on('#target', 'pinchend', function(ev) {
+        initialScale = currentScale;
+    });
 });
 
 myChart.on('datazoom', function (params){
