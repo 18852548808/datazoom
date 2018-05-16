@@ -105,11 +105,11 @@ header {
 }
 
 /* 收入支出表 */
-/*.list_item0{
+.list_item0{
     border-bottom: 1px solid #e1e3ec;
     height: 3.4rem;
     display: none;
-}*/
+}
 .list_item {
     width: 100%;
     box-sizing: border-box;
@@ -127,6 +127,13 @@ header {
 
 .list_item{
     top:0;
+}
+.sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
 }
 .list_item span {
     font-size: 1rem;

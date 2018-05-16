@@ -15,7 +15,7 @@ $(function() {
     var proCon = $('.proCon');
     list_item.on('click', '.all_item',function() {
         console.log(1)
-        $("body").animate({scrollTop:0}, 500);
+        $("body").stop().animate({scrollTop:0}, 500);
         onChecked($(this));
         proCon.empty();
         more.hide();
@@ -27,7 +27,7 @@ $(function() {
     });
     list_item.on('click', '.income', function() {
         console.log(2)
-        $("body").animate({scrollTop:0}, 500);
+        $("body").stop().animate({scrollTop:0}, 500);
         onChecked($(this));
         proCon.empty();
         more.hide();
@@ -39,7 +39,7 @@ $(function() {
     });
     list_item.on('click', '.payfor', function() {
         console.log(3)
-        $("body").animate({scrollTop:0}, 500);
+        $("body").stop().animate({scrollTop:0}, 500);
         onChecked($(this));
         proCon.empty();
         more.hide();
@@ -183,7 +183,7 @@ $(function() {
     }
 
     /****** 吸顶条 ******/
-    /*$(window).on('scroll',function(){
+    $(window).on('scroll',function(){
         topScroll(list_item,list_itemT,list_item0)
     });
     $(window).on("touchmove", function() {
@@ -191,7 +191,7 @@ $(function() {
     });
     //加个屏幕滚动事件，c是滚动条相当于文档最顶端的距离
     function topScroll(obj,objT,obj0) {
-
+        list_item.addClass("sticky");
         if(/android/i.test(navigator.userAgent)){
             var dT = $(document).scrollTop();
             //当滚动的屏幕距离大于等于导航栏本身离最顶端的距离时（判断条件）给它加样式（根据自己业务的条件加样式，一般如下
@@ -209,7 +209,6 @@ $(function() {
             list_item.addClass("sticky");
         }
     }
-*/
 
 
 
