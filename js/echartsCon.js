@@ -90,12 +90,14 @@ option = {
         start: 20,
         end: 100,
         xAxisIndex: [0],
+        zoomLock:true
     },
     {
         type: 'inside',
         start: 40,
         end: 100,
         filterMode: 'empty',
+        zoomLock:true
     }],
     grid: [{ // 网格
         left: 44,
