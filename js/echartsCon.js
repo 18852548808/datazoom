@@ -405,7 +405,7 @@ $('#main canvas').on("touchmove", function(e) {
 });
 
 // 判断鼠标滚轴向上滚动还是向下滚动
-$('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
+/*$('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
     e.preventDefault();
     var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
         (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
@@ -425,11 +425,11 @@ $('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
             }]
         });
     }
-});
+});*/
 
 
 /*******************************放大缩小****************************************/
-$(function() {     //放大缩小
+/*$(function() {     //放大缩小
     var target = $('#main canvas')[0];
     target.style.webkitTransition = 'all ease 0.05s';
     touch.on('#target', 'touchstart', function(ev) {
@@ -455,7 +455,7 @@ $(function() {     //放大缩小
     touch.on('#target', 'pinchend', function(ev) {
         initialScale = currentScale;
     });
-});
+});*/
 
 myChart.on('datazoom', function (params){
     //获得起止位置百分比
