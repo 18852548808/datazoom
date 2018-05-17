@@ -248,7 +248,7 @@ $.get('echarts.json').done(function (data) {
             $('.noProperty').hide();
         }
         // console.log(persent(Percentage(20, option.xData.length)))
-        twoData = 102 - Percentage(2, option.xData.length);
+        twoData = 100 - Percentage(2, option.xData.length);
         // 填入数据
 
         if (option.xData.length == 1){
@@ -356,7 +356,7 @@ $('#main canvas').on("touchmove", function(e) {
             {
                 disabled:false,
                 zoomLock:false
-            }],
+            }]
         });
 
     } else if  ( X < 0 ) { // right 2 left
@@ -370,7 +370,7 @@ $('#main canvas').on("touchmove", function(e) {
             {
                 disabled:false,
                 zoomLock:false
-            }],
+            }]
         });
 
     } else if  ( Math.abs(Y) > Math.abs(X)+5 && Y > 0) { // top 2 bottom
@@ -383,7 +383,7 @@ $('#main canvas').on("touchmove", function(e) {
             {
                 disabled:true,
                 zoomLock:true
-            }],
+            }]
         });
 
 
@@ -397,7 +397,7 @@ $('#main canvas').on("touchmove", function(e) {
             {
                 disabled:true,
                 zoomLock:true
-            }],
+            }]
         });
 
     }
@@ -422,7 +422,7 @@ $('#main canvas').on("mousewheel DOMMouseScroll", function (e) {
             },
             {
                 zoomLock:false
-            }],
+            }]
         });
     }
 });
@@ -446,10 +446,9 @@ $(function() {     //放大缩小
             myChart.setOption( {
                 dataZoom: [{
                     zoomLock:true
-                },
-                    {
-                        zoomLock:true
-                    }],
+                }, {
+                    zoomLock:true
+                }]
             });
         }
     });
@@ -473,7 +472,7 @@ myChart.on('datazoom', function (params){
             },
             {
                 zoomLock:true
-            }],
+            }]
         });
     }else{
         myChart.setOption( {
@@ -482,7 +481,7 @@ myChart.on('datazoom', function (params){
             },
             {
                 zoomLock:false
-            }],
+            }]
         });
     }
 
